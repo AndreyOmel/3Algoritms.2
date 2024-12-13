@@ -1,4 +1,4 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <random>
 using namespace std;
 
@@ -17,7 +17,7 @@ long long mod_pow(long long base, int exp, int mod) {
 bool miller_rabin(int n) {
     int b[4] = { 3,5,7,11 };
     bool simple = true;
-    // Представление n-1 = 2^s * d
+    // РџСЂРµРґСЃС‚Р°РІР»РµРЅРёРµ n-1 = 2^s * d
     int s = 0;
     int r = n - 1;
     while (r % 2 == 0) {
@@ -110,10 +110,10 @@ bool Sol_SHT(int n) {
 }
 int main() {
     int n = 127;
-    // Метод Ферма
+    // РњРµС‚РѕРґ Р¤РµСЂРјР°
     cout << "Method Ferma: " << "Chislo " << n << " simple=" << Ferma(n)   << endl;
 
-    // Метод Соловея-Штрассена
+    // РњРµС‚РѕРґ РЎРѕР»РѕРІРµСЏ-РЁС‚СЂР°СЃСЃРµРЅР°
     cout << "Method Solovey: " << "Chislo " << n << " simple=" <<Sol_SHT(n)  << endl;
         
     //miller-rabin
