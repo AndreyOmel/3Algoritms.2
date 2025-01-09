@@ -1,52 +1,52 @@
-#include<iostream> 
+п»ї#include<iostream> 
 #include<random> 
 #include<exception>
 
 /**
-* @brief Умножение чисел.
-* @param a Первое число.
-* @param b Второе число.
-* @param mod Модуль.
-* @return Произведение по модулю.
+* @brief РЈРјРЅРѕР¶РµРЅРёРµ С‡РёСЃРµР».
+* @param a РџРµСЂРІРѕРµ С‡РёСЃР»Рѕ.
+* @param b Р’С‚РѕСЂРѕРµ С‡РёСЃР»Рѕ.
+* @param mod РњРѕРґСѓР»СЊ.
+* @return РџСЂРѕРёР·РІРµРґРµРЅРёРµ РїРѕ РјРѕРґСѓР»СЋ.
 */
 unsigned long Mul(unsigned long a, unsigned long b, unsigned long mod);
 
 /**
-* @brief Возведение в степень по модулю.
-* @param a Первое число.
-* @param b Второе число.
-* @param mod Модуль.
-* @return Число в степени по модулю.
+* @brief Р’РѕР·РІРµРґРµРЅРёРµ РІ СЃС‚РµРїРµРЅСЊ РїРѕ РјРѕРґСѓР»СЋ.
+* @param a РџРµСЂРІРѕРµ С‡РёСЃР»Рѕ.
+* @param b Р’С‚РѕСЂРѕРµ С‡РёСЃР»Рѕ.
+* @param mod РњРѕРґСѓР»СЊ.
+* @return Р§РёСЃР»Рѕ РІ СЃС‚РµРїРµРЅРё РїРѕ РјРѕРґСѓР»СЋ.
 */
 unsigned long Pow(unsigned long a, unsigned long b, unsigned long mod);
 
 /**
-* @brief Нахождение НОДа.
-* @param a Первое число.
-* @param b Второе число.
-* @return НОД.
+* @brief РќР°С…РѕР¶РґРµРЅРёРµ РќРћР”Р°.
+* @param a РџРµСЂРІРѕРµ С‡РёСЃР»Рѕ.
+* @param b Р’С‚РѕСЂРѕРµ С‡РёСЃР»Рѕ.
+* @return РќРћР”.
 */
 unsigned long GSD(unsigned long a, unsigned long b);
 
 /**
-* @brief Поиск длины числа.
-* @param x Число.
-* @return Длина числа.
+* @brief РџРѕРёСЃРє РґР»РёРЅС‹ С‡РёСЃР»Р°.
+* @param x Р§РёСЃР»Рѕ.
+* @return Р”Р»РёРЅР° С‡РёСЃР»Р°.
 */
 unsigned long Len(unsigned long x);
 
 /**
-* @brief Тест Ферма на простоту.
-* @param n Число.
+* @brief РўРµСЃС‚ Р¤РµСЂРјР° РЅР° РїСЂРѕСЃС‚РѕС‚Сѓ.
+* @param n Р§РёСЃР»Рѕ.
 * @return True or False.
 */
 bool TestFerma(unsigned long n);
 
 /**
-* @brief Генерация простых чисел по ГОСТу.
-* @param t Длина нового числа.
-* @param q Простое число.
-* @return Простое число большей длины.
+* @brief Р“РµРЅРµСЂР°С†РёСЏ РїСЂРѕСЃС‚С‹С… С‡РёСЃРµР» РїРѕ Р“РћРЎРўСѓ.
+* @param t Р”Р»РёРЅР° РЅРѕРІРѕРіРѕ С‡РёСЃР»Р°.
+* @param q РџСЂРѕСЃС‚РѕРµ С‡РёСЃР»Рѕ.
+* @return РџСЂРѕСЃС‚РѕРµ С‡РёСЃР»Рѕ Р±РѕР»СЊС€РµР№ РґР»РёРЅС‹.
 */
 unsigned long Gost(unsigned long t, unsigned long q);
 
@@ -56,15 +56,15 @@ int main()
     try
     {
         unsigned long t, q;
-        std::cout << "Введите длину числа: ";
+        std::cout << "Р’РІРµРґРёС‚Рµ РґР»РёРЅСѓ С‡РёСЃР»Р°: ";
         std::cin >> t;
-        std::cout << "Введите простое число с длиной " << t / 2 << ": ";
+        std::cout << "Р’РІРµРґРёС‚Рµ РїСЂРѕСЃС‚РѕРµ С‡РёСЃР»Рѕ СЃ РґР»РёРЅРѕР№ " << t / 2 << ": ";
         std::cin >> q;
 
         unsigned long p = Gost(t, q);
-        std::cout << "Найдено простое число: " << p;
+        std::cout << "РќР°Р№РґРµРЅРѕ РїСЂРѕСЃС‚РѕРµ С‡РёСЃР»Рѕ: " << p;
         if (TestFerma(p))
-            std::cout << " - простое число" << std::endl;
+            std::cout << " - РїСЂРѕСЃС‚РѕРµ С‡РёСЃР»Рѕ" << std::endl;
     }
     catch (std::exception& error)
     {
@@ -122,7 +122,7 @@ unsigned long Len(unsigned long x)
 bool TestFerma(unsigned long n)
 {
     if (n <= 3)
-        throw std::logic_error("Число должно быть больше 3");
+        throw std::logic_error("Р§РёСЃР»Рѕ РґРѕР»Р¶РЅРѕ Р±С‹С‚СЊ Р±РѕР»СЊС€Рµ 3");
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<unsigned long> uniformIntDistrubution(2, n - 2);
@@ -144,9 +144,9 @@ bool TestFerma(unsigned long n)
 unsigned long Gost(unsigned long t, unsigned long q)
 {
     if (!TestFerma(q))
-        throw std::logic_error("Должно быть простым");
+        throw std::logic_error("Р”РѕР»Р¶РЅРѕ Р±С‹С‚СЊ РїСЂРѕСЃС‚С‹Рј");
     if (t / 2 != Len(q))
-        throw std::logic_error("Не те длины чисел");
+        throw std::logic_error("РќРµ С‚Рµ РґР»РёРЅС‹ С‡РёСЃРµР»");
 
     unsigned long N = pow(10, t - 1) / q + (Pow(10, t - 1, q) ? 1 : 0);
     if (N % 2 == 0)
