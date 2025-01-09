@@ -1,87 +1,87 @@
-#include "..\Polynom\Header.h"
+п»ї#include "..\Polynom\Header.h"
 #include<algorithm>
 #include<complex>
 
 /**
-* @brief Факториал.
-* @param n Число на вход.
-* @return Факториал числа.
+* @brief Р¤Р°РєС‚РѕСЂРёР°Р».
+* @param n Р§РёСЃР»Рѕ РЅР° РІС…РѕРґ.
+* @return Р¤Р°РєС‚РѕСЂРёР°Р» С‡РёСЃР»Р°.
 */
 int fact(int n);
 
 /**
-* @brief Функция для нахождения разницы значений полинома в точке.
-* @param p Полином.
-* @param k Значение точки.
-* @param i Итерация дельты.
-* @return Разница значений.
+* @brief Р¤СѓРЅРєС†РёСЏ РґР»СЏ РЅР°С…РѕР¶РґРµРЅРёСЏ СЂР°Р·РЅРёС†С‹ Р·РЅР°С‡РµРЅРёР№ РїРѕР»РёРЅРѕРјР° РІ С‚РѕС‡РєРµ.
+* @param p РџРѕР»РёРЅРѕРј.
+* @param k Р—РЅР°С‡РµРЅРёРµ С‚РѕС‡РєРё.
+* @param i РС‚РµСЂР°С†РёСЏ РґРµР»СЊС‚С‹.
+* @return Р Р°Р·РЅРёС†Р° Р·РЅР°С‡РµРЅРёР№.
 */
 size_t Delta(Polynom p, unsigned int k, size_t i);
 
 /**
-* @brief Прямое преобразование Фурье.
-* @param poly Коэфициенты полинома.
-* @param invert Инверсия.
+* @brief РџСЂСЏРјРѕРµ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ Р¤СѓСЂСЊРµ.
+* @param poly РљРѕСЌС„РёС†РёРµРЅС‚С‹ РїРѕР»РёРЅРѕРјР°.
+* @param invert РРЅРІРµСЂСЃРёСЏ.
 */
 void fft(std::vector<std::complex<double>>& poly, bool invert);
 
 /**
-* @brief Число в двоичное значение.
-* @param num Значение числа.
-* @return Вектор значений числа в 2-й системе.
+* @brief Р§РёСЃР»Рѕ РІ РґРІРѕРёС‡РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ.
+* @param num Р—РЅР°С‡РµРЅРёРµ С‡РёСЃР»Р°.
+* @return Р’РµРєС‚РѕСЂ Р·РЅР°С‡РµРЅРёР№ С‡РёСЃР»Р° РІ 2-Р№ СЃРёСЃС‚РµРјРµ.
 */
 std::vector<unsigned int> IntToBinary(unsigned int num);
 
 /**
-* @brief Двоичное число в десятичное.
-* @param binary Значения числа в 2-й системе.
-* @return Значение числа в 10-й системе.
+* @brief Р”РІРѕРёС‡РЅРѕРµ С‡РёСЃР»Рѕ РІ РґРµСЃСЏС‚РёС‡РЅРѕРµ.
+* @param binary Р—РЅР°С‡РµРЅРёСЏ С‡РёСЃР»Р° РІ 2-Р№ СЃРёСЃС‚РµРјРµ.
+* @return Р—РЅР°С‡РµРЅРёРµ С‡РёСЃР»Р° РІ 10-Р№ СЃРёСЃС‚РµРјРµ.
 */
 unsigned int BinaryToInt(const std::vector<unsigned int>& binary);
 
 /**
-* @brief Умножение полиномов.
-* @param u Коэффициенты полинома u.
-* @param v Коэффициенты полинома v.
-* @return Коэффициенты полученного полинома.
+* @brief РЈРјРЅРѕР¶РµРЅРёРµ РїРѕР»РёРЅРѕРјРѕРІ.
+* @param u РљРѕСЌС„С„РёС†РёРµРЅС‚С‹ РїРѕР»РёРЅРѕРјР° u.
+* @param v РљРѕСЌС„С„РёС†РёРµРЅС‚С‹ РїРѕР»РёРЅРѕРјР° v.
+* @return РљРѕСЌС„С„РёС†РёРµРЅС‚С‹ РїРѕР»СѓС‡РµРЅРЅРѕРіРѕ РїРѕР»РёРЅРѕРјР°.
 */
 std::vector<std::complex<double>> Multiply(const std::vector<std::complex<double>>& u, std::vector<std::complex<double>>& v);
 
 /**
-* @brief Число в полином.
-* @param num Число в виде вектора.
-* @return Вектоп комлексных коэффициентов.
+* @brief Р§РёСЃР»Рѕ РІ РїРѕР»РёРЅРѕРј.
+* @param num Р§РёСЃР»Рѕ РІ РІРёРґРµ РІРµРєС‚РѕСЂР°.
+* @return Р’РµРєС‚РѕРї РєРѕРјР»РµРєСЃРЅС‹С… РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ.
 */
 std::vector<std::complex<double>> NumberToPoly(const std::vector<unsigned int>& num);
 
 /**
-* @brief Преобразование полинома в число.
-* @param poly Вектор коэффициентов полинома.
-* @return Число в виде вектора.
+* @brief РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёРµ РїРѕР»РёРЅРѕРјР° РІ С‡РёСЃР»Рѕ.
+* @param poly Р’РµРєС‚РѕСЂ РєРѕСЌС„С„РёС†РёРµРЅС‚РѕРІ РїРѕР»РёРЅРѕРјР°.
+* @return Р§РёСЃР»Рѕ РІ РІРёРґРµ РІРµРєС‚РѕСЂР°.
 */
 std::vector<unsigned int> PolyToNumber(const std::vector<std::complex<double>>& poly);
 
 /**
-* @brief Метод Карацубы.
-* @param a Первое число.
-* @param b Второе число.
-* @return Произведение чисел.
+* @brief РњРµС‚РѕРґ РљР°СЂР°С†СѓР±С‹.
+* @param a РџРµСЂРІРѕРµ С‡РёСЃР»Рѕ.
+* @param b Р’С‚РѕСЂРѕРµ С‡РёСЃР»Рѕ.
+* @return РџСЂРѕРёР·РІРµРґРµРЅРёРµ С‡РёСЃРµР».
 */
 size_t methodKarazuba(const unsigned int a, const unsigned int b);
 
 /**
-* @brief Метод Тоома-Кука.
-* @param u Первое число.
-* @param v Второе число.
-* @return Произведение чисел.
+* @brief РњРµС‚РѕРґ РўРѕРѕРјР°-РљСѓРєР°.
+* @param u РџРµСЂРІРѕРµ С‡РёСЃР»Рѕ.
+* @param v Р’С‚РѕСЂРѕРµ С‡РёСЃР»Рѕ.
+* @return РџСЂРѕРёР·РІРµРґРµРЅРёРµ С‡РёСЃРµР».
 */
 size_t methodToomKuk(const unsigned int u, const unsigned int v);
 
 /**
-* @brief Метод Шенхаге-Штрассена.
-* @param u Первое число.
-* @param v Второе число.
-* @return Произведение чисел.
+* @brief РњРµС‚РѕРґ РЁРµРЅС…Р°РіРµ-РЁС‚СЂР°СЃСЃРµРЅР°.
+* @param u РџРµСЂРІРѕРµ С‡РёСЃР»Рѕ.
+* @param v Р’С‚РѕСЂРѕРµ С‡РёСЃР»Рѕ.
+* @return РџСЂРѕРёР·РІРµРґРµРЅРёРµ С‡РёСЃРµР».
 */
 size_t methodSchonhageStrassen(const unsigned int u, const unsigned int v);
 
@@ -93,10 +93,10 @@ int main()
 	int a = 11;
 	int b = 36;
 
-	std::cout << "Числа: " << a << " " << b << std::endl;
-	std::cout << "метод Карацубы: " << methodKarazuba(a, b) << std::endl;
-	std::cout << "метод Тоома-Кука: " << methodToomKuk(a, b) << std::endl;
-	std::cout << "метод Шенхаге-Штрассена: " << methodSchonhageStrassen(a, b) << std::endl;
+	std::cout << "Р§РёСЃР»Р°: " << a << " " << b << std::endl;
+	std::cout << "РјРµС‚РѕРґ РљР°СЂР°С†СѓР±С‹: " << methodKarazuba(a, b) << std::endl;
+	std::cout << "РјРµС‚РѕРґ РўРѕРѕРјР°-РљСѓРєР°: " << methodToomKuk(a, b) << std::endl;
+	std::cout << "РјРµС‚РѕРґ РЁРµРЅС…Р°РіРµ-РЁС‚СЂР°СЃСЃРµРЅР°: " << methodSchonhageStrassen(a, b) << std::endl;
 
 	return 0;
 }
